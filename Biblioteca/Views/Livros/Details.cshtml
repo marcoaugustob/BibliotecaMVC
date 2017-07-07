@@ -1,0 +1,58 @@
+﻿@model DataBiblioteca.Livro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Livro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model._Editora.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Editora.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._Genero.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Genero.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._Prateleira.Localizacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Prateleira.Localizacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emprestado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emprestado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LivroID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

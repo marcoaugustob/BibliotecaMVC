@@ -1,0 +1,38 @@
+﻿@model DataBiblioteca.Prateleira
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Prateleira</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Localizacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Localizacao)
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Livros)
+        </dt>
+
+        @foreach (var item in Model.Livros)
+        {
+            <dd>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </dd>
+        }
+
+    </dl>
+
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.PrateleiraID }) |
+    @Html.ActionLink("Voltar para a lista", "Index")
+</p>

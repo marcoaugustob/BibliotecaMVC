@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DataBiblioteca.Livro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de livros</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Livro
+        </th>
+        <th>
+           Editora
+        </th>
+        <th>
+           Genêro
+        </th>
+        <th>
+            Localização
+        </th>
+     
+        <th>
+            @Html.DisplayNameFor(model => model.Emprestado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Editora.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Genero.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Prateleira.Localizacao)
+        </td>
+     
+        <td>
+            @Html.DisplayFor(modelItem => item.Emprestado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.LivroID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.LivroID }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.LivroID })
+        </td>
+    </tr>
+}
+
+</table>
